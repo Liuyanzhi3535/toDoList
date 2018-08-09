@@ -1,0 +1,181 @@
+@charset "UTF-8";
+* {
+  font-family: Helvetica, "微軟正黑體";
+  letter-spacing: 1px;
+  position: relative;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  display: inline-block;
+  background-color: #168099;
+  position: relative;
+}
+
+.ToDoList {
+  position: relative;
+  top: 100px;
+  background-color: #f9f0cd;
+  box-shadow: 15px 20px 10px rgba(0, 0, 0, 0.5);
+  width: 60%;
+  max-width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 100px;
+  padding: 40px 20px 45px 20px;
+}
+
+h2 {
+  color: #383838;
+  font-size: 60px;
+  text-shadow: 5px 3px 10px rgba(0, 0, 0, 0.1);
+  margin: 0px;
+  padding-bottom: 10px;
+}
+
+.add {
+  position: relative;
+}
+
+input {
+  width: calc(100% - 85px );
+  border: none;
+  padding: 12px;
+  margin: 10px 0px;
+  color: #f9f9f9;
+  background-color: #383838;
+  font-size: 20px;
+  font-weight: 650;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+input:focus {
+  outline-color: #f9f9f9;
+}
+
+.btn {
+  display: inline-block;
+  position: absolute;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  top: 50%;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+  margin: 0px;
+  right: 0px;
+  cursor: pointer;
+  background-color: #383838;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+  transition: 0.1s;
+}
+.btn:before, .btn:after {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 30px;
+  background-color: #f9f9f9;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.btn:active {
+  -webkit-transform: translate(0%, -50%) scale(0.9);
+          transform: translate(0%, -50%) scale(0.9);
+}
+.btn:before {
+  -webkit-transform: translate(-50%, -50%) rotate(0deg);
+          transform: translate(-50%, -50%) rotate(0deg);
+}
+.btn:after {
+  -webkit-transform: translate(-50%, -50%) rotate(90deg);
+          transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.lists {
+  width: 100%;
+  padding: 0px;
+  margin-top: 20px;
+}
+
+.task {
+  list-style: none;
+  position: relative;
+  font-size: 20px;
+  font-weight: 600;
+  color: #383838;
+  margin: 5px 0px;
+  padding: 15px 0px;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #f9f9f9;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+  transition: 0.2s;
+}
+.task:before {
+  content: " ";
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  border: 1.7px solid #383838;
+  margin: 0px 5px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.task .time, .task .btn {
+  display: inline-block;
+}
+.task .time {
+  position: absolute;
+  right: 45px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.task .btn {
+  transition: 0.3s;
+  right: 0px;
+  background-color: rgba(0, 0, 0, 0);
+  top: 50%;
+  -webkit-transform: translate(0%, -50%) rotate(45deg) scale(0.6);
+          transform: translate(0%, -50%) rotate(45deg) scale(0.6);
+}
+.task .btn:before, .task .btn:after {
+  background-color: #383838;
+}
+.task .btn:hover {
+  background-color: #e87171;
+}
+.task .btn:hover:before, .task .btn:hover:after {
+  background-color: #f9f9f9;
+}
+
+.complete {
+  opacity: 0.5;
+}
+.complete:before {
+  content: "✓";
+  font-size: 35px;
+  line-height: 10px;
+}
+
+@media screen and (max-width: 500px) {
+  h2 {
+    font-size: 40px;
+  }
+
+  input {
+    font-size: 18px;
+  }
+
+  .task {
+    font-size: 14px;
+  }
+  .task .time {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    opacity: 0.3;
+  }
+}
