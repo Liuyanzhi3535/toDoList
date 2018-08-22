@@ -28,8 +28,8 @@ function showlist(){
         task_html.replace("{{task}}",task.name)
                  .replace("{{id}}",task_id)
                  .replace("{{del_id}}",del_task_id)
-                 .replace("{{nHour}}",task.nHour)
-                 .replace("{{nMinutes}}",task.nMinutes)
+                 .replace("{{nHour}}"," 於" + task.nHour)
+                 .replace("{{nMinutes}}",task.nMinutes+'記錄')
                  .replace("{{isDone}}",isDone)
                  .replace("{{delid}}",i);
     

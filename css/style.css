@@ -128,11 +128,11 @@ input:focus {
   display: inline-block;
 }
 .task .time {
+  font-size: 0.5em;
   position: absolute;
   right: 45px;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  opacity: 0.5;
 }
 .task .btn {
   transition: 0.3s;
