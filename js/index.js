@@ -65,14 +65,13 @@ showlist();
 // 新增資料流程: 動態push一筆資料->呼叫showlist重新渲染清單
 $(".addbtn").click(
   function(){
-    //使用val()存取輸入的值，val("..") 有給參數是設定
-    var dh = new Date();
-    var dm = new Date();        
+    var addHour = new Date();
+    var addMinute = new Date();        
     toDoList.list.push(
       {
         name:$("#input_name").val(),
-        nHour:dh.getHours() ,
-        nMinutes:dm.getMinutes(),
+        nHour:addHour.getHours() ,
+        nMinutes:addMinute.getMinutes(),
         done:false
       }
     );
@@ -86,7 +85,7 @@ $(".addbtn").click(
 function remove_item(id){
   toDoList.list.splice(id,1);
   showlist();
-};
+}
 
 // 任務完成流程: 一筆資料新增.complete
 function changeType(id){
@@ -94,6 +93,7 @@ function changeType(id){
   if(toDoList.list[id].done == true){
   toDoList.list[id].done = false;
   }else{
-  toDoList.list[id].done = true;};
+  toDoList.list[id].done = true;
+  }
   showlist();
-};
+}
